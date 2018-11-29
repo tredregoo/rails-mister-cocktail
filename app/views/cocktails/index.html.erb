@@ -1,6 +1,17 @@
 <div class="container">
-    <h1>Coco's bar</h1>
-    <h2>Voici la liste de nos cocktails</h2>
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card">
+        <div class="card-description"
+        style="background-image: url('https://kitt.lewagon.com/placeholder/cities/shanghai');>
+        <%= cocktail.name %>
+        </div>
+        <%= link_to 'Voir', cocktail_path(cocktail), class: "btn btn-primary" %>
+      </div>
+    </div>
+    <% end %>  
+</div>
 </div>
 <div class="container">
 <ul style="list-line: none">
