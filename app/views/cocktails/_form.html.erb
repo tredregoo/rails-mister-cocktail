@@ -1,0 +1,4 @@
+<%= simple_form_for @cocktail do |f| %>
+  <%= f.input :name, label: 'Nom du cocktail', error: 'Attention : le nom est obligatoire' %>
+  <%= f.button :submit, label: "Ajouter" %>
+<% end %>
