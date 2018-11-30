@@ -1,4 +1,6 @@
 <%= simple_form_for @cocktail do |f| %>
   <%= f.input :name, label: 'Nom du cocktail', error: 'Attention : le nom est obligatoire' %>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
   <%= f.button :submit, label: "Ajouter" %>
 <% end %>

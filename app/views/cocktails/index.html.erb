@@ -7,7 +7,7 @@
   <div class="row">
   <% @cocktails.each do |cocktail| %>
     <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: url('https://image.afcdn.com/recipe/20180705/80256_w350h250c1cx1665cy1865cxt0cyt0cxb2960cyb4500.jpg');">
+      <div class="card" style="background-image: url('<%= cl_image_path cocktail.photo, height: 300, width: 350, crop: :fill %>')">
         <div class="card-description">
           <h2><%= cocktail.name %></h2>
         </div>

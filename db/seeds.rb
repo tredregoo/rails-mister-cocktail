@@ -6,22 +6,21 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require 'open-uri'
-require 'json'
+# require 'open-uri'
+# require 'json'
 
-result = JSON.parse(open("https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list").read)
+# result = JSON.parse(open("https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list").read)
 
-result['drinks'].each do |elm|
-  Ingredient.create!(name: elm['strIngredient1'])
-    p elm['strIngredient1']
-end
+# result['drinks'].each do |elm|
+  # Ingredient.create!(name: elm['strIngredient1']
+# end
 
-Cocktail.create!(name: 'Bloody Mary')
-Cocktail.create!(name: 'B 52's)
-Cocktail.create!(name: 'Cuba libre')
-Dose.create!(description: '3cl', cocktail_id: 1, ingredient_id: 1)
-Dose.create!(description: '5cl', cocktail_id: 1, ingredient_id: 3)
-Dose.create!(description: '8cl', cocktail_id: 1, ingredient_id: 5)
-Dose.create!(description: '1 dose', cocktail_id: 2, ingredient_id: 6)
-Dose.create!(description: '7cl', cocktail_id: 2, ingredient_id: 8)
-Dose.create!(description: '10cl', cocktail_id: 2, ingredient_id: 10)
+
+
+url = "https://cdn.liquor.com/wp-content/uploads/2017/09/01105541/classic-bloody-mary-720x720-recipe.jpg"
+cocktail = Cocktail.new(name: 'BloodyM')
+cocktail.remote_photo_url = url
+cocktail.save
+Dose.create(description:'10cl', cocktail_id: cocktail.id, ingredient_id: 4)
+Dose.create(description:'5cl', cocktail_id: cocktail.id, ingredient_id: 8)
+Dose.create(description:'10cl', cocktail_id: cocktail.id, ingredient_id: 12)
