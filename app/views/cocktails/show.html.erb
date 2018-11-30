@@ -1,20 +1,24 @@
 <div class="container">
-    <h1>Coco's bar</h1>
-    <h2><%= @cocktail.name %></h2>
+    <div class="cocktail-card">
+        <div class="cocktail-picture">
+        </div>
+        <div class="cocktail-name">
+            <h2><%= @cocktail.name %></h2>
+        </div>
+        <div class="cocktail-description">
+            <h3>Ingredients</h3>
+            <ul>
+                <% @cocktail.doses.each do |dose| %>
+                <li>
+                <% %>
+                <p><%= Ingredient.find(dose.ingredient_id).name %> - <%= dose.description %></p>
+                <p><%= link_to 'Supprimer cet ingrédient', dose_path(dose), method: :delete %></p>
+                </li>
+                <% end %>
+            </ul>
+        </div>
+    </div>
 </div>
-<div class="container">
-<h3>Liste des ingrédients : </h3>
-<ul>
-    <% @cocktail.doses.each do |dose| %>
-    <li>
-    <% %>
-    <p><%= Ingredient.find(dose.ingredient_id).name %> - <%= dose.description %></p>
-    <p><%= link_to 'Supprimer cet ingrédient', dose_path(dose), method: :delete %></p>
-    </li>
-    <% end %>
-</ul>
-</div>
-<div class="container">
 <ul>
     <li>
     <p><%= link_to 'Ajouter un ingrédient', new_cocktail_dose_path(@cocktail)%></p>

@@ -3,3 +3,33 @@ list-style:none;
 margin-left:0;
 padding-left:0;
 }
+
+.cocktail-card{ 
+    height: 50vh;
+    margin: 0;
+    padding: 0;
+    background-color: grey;
+    position: relative;
+    display: flex;
+}
+
+.cocktail-picture{
+    height: 400px;
+    width: 400px;
+    background-color: green;
+    position: absolute;
+    top: 30px;
+    left : 30px;
+}
+
+.cocktail-name {
+    position: absolute;
+    top: 10px;
+    right: 430px;
+}
+
+.cocktail-description {
+    position: absolute;
+    top: 30px;
+    right: 430px;
+}

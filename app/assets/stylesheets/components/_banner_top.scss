@@ -1,21 +1,22 @@
-.banner {
+.banner-top {
     color: white;
     text-align: center;
-    height: 80vh;
+    height: 30vh;
     /* if you have a 70px navbar => height: calc(100vh - 70px); */
     background-size: cover !important;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: asset-url('glasses.jpg');
+    background-image: asset-url('color_glasses.jpg');
     background-position: center;
+    margin-bottom: 20px;
   }
-  .banner h1 {
+  .banner-top h1 {
     font-size: 50px;
     font-weight: bold;
     text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
   }
-  .banner p {
+  .banner-top p {
     font-size: 25px;
     font-weight: lighter;
     color: rgb(255, 255, 255);

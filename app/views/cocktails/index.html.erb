@@ -1,31 +1,19 @@
+<div class="banner-top">
+</div>
+<div class="container-fluid" style="text-align: center;">
+<h1>Tous nos cocktails</h1>
+</div>
 <div class="container">
   <div class="row">
-    <% @cocktails.each do |cocktail| %>
+  <% @cocktails.each do |cocktail| %>
     <div class="col-xs-12 col-sm-4">
-      <div class="card">
-        <div class="card-description"
-        style="background-image: url('https://kitt.lewagon.com/placeholder/cities/shanghai');>
-        <%= cocktail.name %>
+      <div class="card" style="background-image: url('https://image.afcdn.com/recipe/20180705/80256_w350h250c1cx1665cy1865cxt0cyt0cxb2960cyb4500.jpg');">
+        <div class="card-description">
+          <h2><%= cocktail.name %></h2>
         </div>
-        <%= link_to 'Voir', cocktail_path(cocktail), class: "btn btn-primary" %>
+        <div class="card-action-view"> 
+        <%= link_to 'Voir', cocktail_path(cocktail), class:"btn btn-primary btn-lg"%>
+        </div>
       </div>
     </div>
-    <% end %>  
-</div>
-</div>
-<div class="container">
-<ul style="list-line: none">
-    <% @cocktails.each do |cocktail| %>
-    <li>
-    <h3><%= cocktail.name %> - <%= link_to 'Voir', cocktail_path(cocktail) %></h3>
-    </li>
-    <% end %>
-</ul>
-</div>
-<div class="container">
-<ul>
-    <li>
-    <%= link_to 'Ajouter un cocktail', new_cocktail_path %>
-    </li>
-</ul>
-</div>
+    <%end%>
