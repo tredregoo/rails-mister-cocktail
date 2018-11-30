@@ -12,7 +12,7 @@
                 <li>
                 <% %>
                 <p><%= Ingredient.find(dose.ingredient_id).name %> - <%= dose.description %></p>
-                <p><%= link_to 'Supprimer cet ingrédient', dose_path(dose), method: :delete %></p>
+                <p><%= link_to 'Supprimer cet ingredient', dose_path(dose), method: :delete %></p>
                 </li>
                 <% end %>
             </ul>
